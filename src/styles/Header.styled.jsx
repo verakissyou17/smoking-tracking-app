@@ -1,4 +1,4 @@
-import styled from "styled-components"; 
+import styled from "styled-components";
 
 export const HeaderContainer = styled.header`
   text-align: center;
@@ -10,7 +10,7 @@ export const HeaderContainer = styled.header`
 
   h1 {
     font-family: "Savate", Arial, sans-serif;
-     font-display: swap;
+    font-display: swap;
     font-size: 2.5rem;
     margin: 0;
     letter-spacing: 1px;
