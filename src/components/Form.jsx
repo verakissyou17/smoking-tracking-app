@@ -41,7 +41,7 @@ function Form({ addEntry }) {
     <FormContainer onSubmit={handleSubmit}>
       <fieldset>
         <div className="form-group">
-          <label htmlFor="cigarettes">Cigarettes per day:</label>
+          <label htmlFor="cigarettes">Cigarettes/day:</label>
           <input
             type="number"
             min={0}
