@@ -1,0 +1,45 @@
+:root {
+  /* Backgrounds */
+  --color-bg: #F4F4F9;
+  --color-table-header-bg: #2EC4B6;
+  --color-alt-row: rgba(255, 191, 105, 0.2);
+  --color-bg-header: #F8E1CD;
+  --color-bg-footer:  #FEC3AC;
+
+  /* Text */
+  --color-text-main: #222222;
+  --color-text-light: #ffffff;
+
+  /* Buttons */
+  --color-button-delete: #FF4D4D;
+  --color-button-delete-hover: #D93B3B;
+  --color-button-accent: #FFBF69;
+  --color-button-accent-hover: #f2a94a;
+
+  /* Borders & shadows */
+  --color-border: #CCCCCC;
+  --color-shadow: rgba(0, 0, 0, 0.1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Savate", sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--color-bg);
+}
+
+  .empty-list-message {
+    text-align: center;
+    margin-bottom: 0.5em;
+  }
+
+
