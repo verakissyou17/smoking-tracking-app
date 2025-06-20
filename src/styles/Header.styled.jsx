@@ -7,4 +7,12 @@ export const HeaderContainer = styled.header`
   width: 100%;
   padding: 1em;
   box-shadow: 0 2px 4px var(--color-shadow);
+
+  h1 {
+    font-family: "Savate", Arial, sans-serif;
+     font-display: swap;
+    font-size: 2.5rem;
+    margin: 0;
+    letter-spacing: 1px;
+  }
 `;

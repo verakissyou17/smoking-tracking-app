@@ -5,7 +5,7 @@ export const FormContainer = styled.form`
   align-items: center;
   width: 100%;
   max-width: 60em;
-  margin: 1em auto;
+  margin: 2em auto;
   padding: 1em;
   background-color: #f9f9f9;
   box-shadow: 0 2px 4px var(--color-shadow);
@@ -13,8 +13,8 @@ export const FormContainer = styled.form`
   fieldset {
     display: flex;
     justify-content: center;
-    gap: 1.5rem;
-    margin-bottom: 1em;
+    gap: 2.5rem;
+    margin-bottom: 2em;
     border: none;
     outline: none;
 
@@ -39,14 +39,14 @@ export const FormContainer = styled.form`
       padding: 0.5em;
       border-radius: 4px;
       border: 1px solid var(--color-border);
-      font-family: "Savate", sans-serif;
+      font-family: "Savate", Arial, sans-serif;
     }
   }
 
   button {
-    font-family: "Savate", sans-serif;
-    width: 100%;
-    margin-top: 1em;
+    font-family: "Savate", Arial, sans-serif;
+    width: 30%;
+    margin: 2em auto 1em;
     padding: 0.5em 1em;
     background-color: var(--color-button-accent);
     color: var(--color-text-main);

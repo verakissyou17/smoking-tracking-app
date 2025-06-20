@@ -13,7 +13,9 @@ export const ListContainer = styled.table`
   thead {
     background-color: var(--color-table-header-bg);
 
-    font-family: "Savate", sans-serif;
+    font-family: "Savate", Arial, sans-serif;
+    color: var(--color-text-main);
+    letter-spacing: 1px;
   }
 
   td,
@@ -39,7 +41,7 @@ export const ListContainer = styled.table`
   }
 
   .delete-btn {
-    font-family: "Savate", sans-serif;
+    font-family: "Savate", Arial, sans-serif;
     border: none;
     outline: none;
     background-color: transparent;
@@ -55,9 +57,9 @@ export const ListContainer = styled.table`
 
 export const StyledRow = styled.td`
   color: ${({ result }) => {
-    if (result === 0) return "var(--color-table-header-bg)";
-    if (result < 1) return "var(--color-button-accent)";
-    if (result > 1) return "var(--color-button-delete)";
+    if (result === 0) return "darkgreen";
+    if (result < 1) return "darkorange";
+    if (result > 1) return "darkred";
     return "var(--color-text-main)";
   }};
 `;
