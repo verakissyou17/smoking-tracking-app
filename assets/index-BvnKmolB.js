@@ -54,13 +54,21 @@ Error generating stack: `+e.message+`
   width: 100%;
   padding: 1em;
   box-shadow: 0 2px 4px var(--color-shadow);
+
+  h1 {
+    font-family: "Savate", Arial, sans-serif;
+    font-display: swap;
+    font-size: 2.5rem;
+    margin: 0;
+    letter-spacing: 1px;
+  }
 `;function By(){return Y.jsx(Yy,{children:Y.jsx("h1",{children:"Smoking Tracking"})})}const Cy=Ka.form`
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
   max-width: 60em;
-  margin: 1em auto;
+  margin: 2em auto;
   padding: 1em;
   background-color: #f9f9f9;
   box-shadow: 0 2px 4px var(--color-shadow);
@@ -68,8 +76,8 @@ Error generating stack: `+e.message+`
   fieldset {
     display: flex;
     justify-content: center;
-    gap: 1.5rem;
-    margin-bottom: 1em;
+    gap: 2.5rem;
+    margin-bottom: 2em;
     border: none;
     outline: none;
 
@@ -94,14 +102,14 @@ Error generating stack: `+e.message+`
       padding: 0.5em;
       border-radius: 4px;
       border: 1px solid var(--color-border);
-      font-family: "Savate", sans-serif;
+      font-family: "Savate", Arial, sans-serif;
     }
   }
 
   button {
-    font-family: "Savate", sans-serif;
-    width: 100%;
-    margin-top: 1em;
+    font-family: "Savate", Arial, sans-serif;
+    width: 30%;
+    margin: 2em auto 1em;
     padding: 0.5em 1em;
     background-color: var(--color-button-accent);
     color: var(--color-text-main);
@@ -135,7 +143,9 @@ Error generating stack: `+e.message+`
   thead {
     background-color: var(--color-table-header-bg);
 
-    font-family: "Savate", sans-serif;
+    font-family: "Savate", Arial, sans-serif;
+    color: var(--color-text-main);
+    letter-spacing: 1px;
   }
 
   td,
@@ -161,7 +171,7 @@ Error generating stack: `+e.message+`
   }
 
   .delete-btn {
-    font-family: "Savate", sans-serif;
+    font-family: "Savate", Arial, sans-serif;
     border: none;
     outline: none;
     background-color: transparent;
@@ -174,7 +184,7 @@ Error generating stack: `+e.message+`
     }
   }
 `,Qy=Ka.td`
-  color: ${({result:c})=>c===0?"var(--color-table-header-bg)":c<1?"var(--color-button-accent)":c>1?"var(--color-button-delete)":"var(--color-text-main)"};
+  color: ${({result:c})=>c===0?"darkgreen":c<1?"darkorange":c>1?"darkred":"var(--color-text-main)"};
 `;function Zy({entries:c,handleDelete:s}){return Y.jsx(Y.Fragment,{children:c.length===0?Y.jsx("p",{className:"empty-list-message",children:"Nicio intrare încă."}):Y.jsxs(Xy,{children:[Y.jsx("thead",{children:Y.jsxs("tr",{children:[Y.jsx("th",{children:"Date"}),Y.jsx("th",{children:"Trigger"}),Y.jsx("th",{children:"Alternative"}),Y.jsx("th",{children:"Result"}),Y.jsx("th",{children:"Outcome"}),Y.jsx("th",{children:"Delete"})]})}),Y.jsx("tbody",{children:c.map((o,r)=>{const g=Date.now(),A=o.cigarettes===0&&o.goal===0?0:o.cigarettes>0&&o.goal===0?o.cigarettes:o.cigarettes/o.goal;return Y.jsxs("tr",{children:[Y.jsx("td",{children:o.timeStamp===""?new Date(g).toISOString().split("T")[0].split("-").reverse().join("/"):String(o.timeStamp).split("T")[0].split("-").reverse().join("/")}),Y.jsx("td",{children:o.trigger}),Y.jsx("td",{children:o.alternative}),Y.jsxs(Qy,{result:A,children:[o.cigarettes," / ",o.goal]}),Y.jsx("td",{children:o.outcome||"N/A"}),Y.jsx("td",{children:Y.jsx("button",{className:"delete-btn",onClick:()=>s(r),children:"X"})})]},r)})})]})})}const th="entries";function Vy(){const c=localStorage.getItem(th);return c?JSON.parse(c):[]}function R0(c){localStorage.setItem(th,JSON.stringify(c))}function Ly(){const[c,s]=yl.useState([]);yl.useEffect(()=>{const g=Vy();s(g)},[]);const o=g=>{const A=[...c,g];s(A),R0(A)},r=g=>{s(R=>R.filter((q,M)=>M!==g));const A=c.filter((R,q)=>q!==g);R0(A)};return Y.jsxs("main",{children:[Y.jsx(Gy,{addEntry:o}),Y.jsx(Zy,{entries:c,handleDelete:r})]})}const Ky=Ka.footer`
     text-align: center;
     background-color: var(--color-bg-footer);
