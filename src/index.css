@@ -1,10 +1,13 @@
 :root {
   /* Backgrounds */
   --color-bg: #F4F4F9;
-  --color-table-header-bg: #2EC4B6;
+  --color-table-header-bg: #0fb4a4;
   --color-alt-row: rgba(255, 191, 105, 0.2);
   --color-bg-header: #F8E1CD;
   --color-bg-footer:  #FEC3AC;
+  --color-table-red: rgba(255, 48, 21, 0.2);
+  --color-table-orange: rgba(255, 166, 0, 0.2);
+  --color-table-green: rgba(6, 221, 6, 0.2);
 
   /* Text */
   --color-text-main: #222222;
@@ -17,7 +20,7 @@
   --color-button-accent-hover: #f2a94a;
 
   /* Borders & shadows */
-  --color-border: #CCCCCC;
+  --color-border: rgba(105, 105, 105, 0.5);
   --color-shadow: rgba(0, 0, 0, 0.1);
 }
 
@@ -46,5 +49,4 @@ body {
     text-align: center;
     margin-bottom: 0.5em;
   }
-
 

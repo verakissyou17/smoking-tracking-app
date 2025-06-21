@@ -1,12 +1,17 @@
-import { ListContainer, StyledRow, StyledTable } from "../styles/List.styled";
+import {
+  TableContainer,
+  StyledTableData,
+  StyledTable,
+  StyledTableRow,
+} from "../styles/Table.styled";
 
-function List({ entries, handleDelete }) {
+function Table({ entries, handleDelete }) {
   return (
     <>
       {entries.length === 0 ? (
-        <p className="empty-list-message">Nicio intrare încă.</p>
+        <p className="empty-list-message">No entry yet</p>
       ) : (
-        <ListContainer>
+        <TableContainer>
           <StyledTable>
             <thead>
               <tr>
@@ -28,7 +33,7 @@ function List({ entries, handleDelete }) {
                     ? entry.cigarettes
                     : entry.cigarettes / entry.goal;
                 return (
-                  <tr key={index}>
+                  <StyledTableRow result={result} key={index}>
                     <td>
                       {entry.timeStamp === ""
                         ? new Date(now)
@@ -45,9 +50,9 @@ function List({ entries, handleDelete }) {
                     </td>
                     <td>{entry.trigger}</td>
                     <td>{entry.alternative}</td>
-                    <StyledRow result={result}>
+                    <StyledTableData result={result}>
                       {entry.cigarettes} / {entry.goal}
-                    </StyledRow>
+                    </StyledTableData>
                     <td>{entry.outcome || "N/A"}</td>
                     <td>
                       <button
@@ -57,15 +62,15 @@ function List({ entries, handleDelete }) {
                         X
                       </button>
                     </td>
-                  </tr>
+                  </StyledTableRow>
                 );
               })}
             </tbody>
           </StyledTable>
-        </ListContainer>
+        </TableContainer>
       )}
     </>
   );
 }
 
-export default List;
+export default Table;
