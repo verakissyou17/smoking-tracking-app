@@ -133,9 +133,12 @@ Error generating stack: `+e.message+`
   width: 100%;
   max-width: 60em;
   margin: 1rem auto;
-  padding: 1em;
   overflow-x: auto;
   box-shadow: 0 2px 4px var(--color-shadow);
+  border: 2px solid var(--color-border);
+  background-color: var(--color-bg-light);
+  padding: 0.5em;
+  border-radius: 0.5rem;
 `,Qm=Ul.table`
   width: 100%;
   border-collapse: collapse;
@@ -183,7 +186,7 @@ Error generating stack: `+e.message+`
     }
   }
 `,Zm=Ul.td`
-  color: ${({result:c})=>c<=0||c<=.5?"green":c<=1?"orange":c>1?"red":"var(--color-text-main)"};
+  color: ${({result:c})=>c<=0||c<=.5?"green":c<=1?"orange":c>1?"darkred":"var(--color-text-main)"};
 `,Vm=Ul.tr`
   background-color: ${({result:c})=>c<=0||c<=.5?"var(--color-table-green)":c<=1?"var(--color-table-orange)":c>1?"var(--color-table-red)":"var(--color-text-main)"};
 `;function Lm({entries:c,handleDelete:r}){return U.jsx(U.Fragment,{children:c.length===0?U.jsx("p",{className:"empty-list-message",children:"No entry yet"}):U.jsx(Xm,{children:U.jsxs(Qm,{children:[U.jsx("thead",{children:U.jsxs("tr",{children:[U.jsx("th",{children:"Date"}),U.jsx("th",{children:"Trigger"}),U.jsx("th",{children:"Alternative"}),U.jsx("th",{children:"Result"}),U.jsx("th",{children:"Outcome"}),U.jsx("th",{children:"Delete"})]})}),U.jsx("tbody",{children:c.map((o,s)=>{const g=Date.now(),A=o.cigarettes===0&&o.goal===0?0:o.cigarettes>0&&o.goal===0?o.cigarettes:o.cigarettes/o.goal;return U.jsxs(Vm,{result:A,children:[U.jsx("td",{children:o.timeStamp===""?new Date(g).toISOString().split("T")[0].split("-").reverse().join("/"):String(o.timeStamp).split("T")[0].split("-").reverse().join("/")}),U.jsx("td",{children:o.trigger}),U.jsx("td",{children:o.alternative}),U.jsxs(Zm,{result:A,children:[o.cigarettes," / ",o.goal]}),U.jsx("td",{children:o.outcome||"N/A"}),U.jsx("td",{children:U.jsx("button",{className:"delete-btn",onClick:()=>r(s),children:"X"})})]},s)})})]})})})}const Km=Ul.section`
@@ -191,7 +194,7 @@ Error generating stack: `+e.message+`
   max-width: 60em;
   margin: 1rem auto;
   padding: 1em;
-  background-color: var(--color-bg);
+  background-color: var(--color-bg-light);
   box-shadow: 0 2px 4px var(--color-shadow);
 
   .form-savings {
