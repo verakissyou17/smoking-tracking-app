@@ -4,7 +4,7 @@ export const SavingsContainer = styled.section`
   max-width: 60em;
   margin: 1rem auto;
   padding: 1em;
-  background-color: var(--color-bg);
+  background-color: var(--color-bg-light);
   box-shadow: 0 2px 4px var(--color-shadow);
 
   .form-savings {

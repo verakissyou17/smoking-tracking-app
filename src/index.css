@@ -1,12 +1,13 @@
 :root {
   /* Backgrounds */
-  --color-bg: #F4F4F9;
+  --color-bg: hsla(0, 0%, 80%, 0.673);
+  --color-bg-light: #f9f9f9;
   --color-table-header-bg: #0fb4a4;
   --color-alt-row: rgba(255, 191, 105, 0.2);
   --color-bg-header: #F8E1CD;
   --color-bg-footer:  #FEC3AC;
-  --color-table-red: rgba(255, 48, 21, 0.2);
-  --color-table-orange: rgba(255, 166, 0, 0.2);
+  --color-table-red: rgba(253, 188, 180, 0.29);
+  --color-table-orange: hsla(39, 100%, 50%, 0.2);
   --color-table-green: rgba(6, 221, 6, 0.2);
 
   /* Text */
@@ -38,7 +39,6 @@ html {
 
 body {
   font-family: "Savate", Arial, sans-serif;
-
   display: flex;
   flex-direction: column;
   min-height: 100vh;

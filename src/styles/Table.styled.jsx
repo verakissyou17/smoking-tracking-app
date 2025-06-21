@@ -4,9 +4,12 @@ export const TableContainer = styled.section`
   width: 100%;
   max-width: 60em;
   margin: 1rem auto;
-  padding: 1em;
   overflow-x: auto;
   box-shadow: 0 2px 4px var(--color-shadow);
+  border: 2px solid var(--color-border);
+  background-color: var(--color-bg-light);
+  padding: 0.5em;
+  border-radius: 0.5rem;
 `;
 
 export const StyledTable = styled.table`
@@ -61,7 +64,7 @@ export const StyledTableData = styled.td`
   color: ${({ result }) => {
     if (result <= 0 || result <= 0.5) return "green";
     if (result <= 1) return "orange";
-    if (result > 1) return "red";
+    if (result > 1) return "darkred";
     return "var(--color-text-main)";
   }};
 `;
