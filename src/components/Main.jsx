@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Form from "./Form";
 import List from "./List";
 import { loadEntries, saveEntries } from "../localData.js";
+import { MainContainer } from "../styles/Main.styled.jsx";
 
 function Main() {
   const [entries, setEntries] = useState([]);
@@ -24,10 +25,10 @@ function Main() {
   };
 
   return (
-    <main>
+    <MainContainer>
       <Form addEntry={addEntry} />
       <List entries={entries} handleDelete={handleDelete} />
-    </main>
+    </MainContainer>
   );
 }
 
