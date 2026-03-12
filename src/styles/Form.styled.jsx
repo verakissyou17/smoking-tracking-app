@@ -5,15 +5,15 @@ export const FormContainer = styled.form`
   align-items: center;
   width: 100%;
   max-width: 60em;
-  margin: 2em auto;
   padding: 1em;
-  background-color: #f9f9f9;
-  box-shadow: 0 2px 4px var(--color-shadow);
+  margin: 2em auto;
+  background-color: var(--color-bg-light);
+  box-shadow: 2px 2px 5px var(--color-shadow);
 
   fieldset {
     display: flex;
-    justify-content: center;
-    gap: 2.5rem;
+    align-items: center;
+    gap: 1rem;
     margin-bottom: 2em;
     border: none;
     outline: none;
@@ -41,6 +41,14 @@ export const FormContainer = styled.form`
       border: 1px solid var(--color-border);
       font-family: "Savate", Arial, sans-serif;
     }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: var(--black);
+      font-size: 0.7rem;
+      opacity: 0.8;
+      font-style: italic;
+    }
   }
 
   button {
@@ -49,7 +57,7 @@ export const FormContainer = styled.form`
     margin: 2em auto 1em;
     padding: 0.5em 1em;
     background-color: var(--color-button-accent);
-    color: var(--color-text-main);
+    color: var(--black);
     font-size: 1.2rem;
     font-weight: bold;
     border: none;

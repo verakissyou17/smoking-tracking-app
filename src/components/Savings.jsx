@@ -2,31 +2,20 @@ import { SavingsContainer, ProgressBarElement } from "../styles/Savings.styled";
 
 function Savings({
   total,
-  budget,
-  price,
-  handleBudgetChange,
-  handlePriceChange,
   calculateExpenses,
   expenses,
+  savings,
+  handleSavingsChange,
+  price,
+  handlePriceChange,
 }) {
+  const percent = savings ? (expenses * 100) / savings : 0;
   return (
     <SavingsContainer>
       <h2>Calculate your savings</h2>
       <form className="form-savings">
         <div className="form-group">
-          <label htmlFor="budget">Budget:</label>
-          <input
-            type="number"
-            id="budget"
-            name="budget"
-            min={0}
-            onChange={handleBudgetChange}
-            value={budget}
-            className="budget-input"
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="price">Price per pack:</label>
+          <label htmlFor="price">Price/pack:</label>
           <input
             type="number"
             id="price"
@@ -37,9 +26,22 @@ function Savings({
             className="price-input"
           />
         </div>
+        <div className="form-group">
+          <label htmlFor="savings">Savings:</label>
+          <input
+            type="number"
+            id="savings"
+            name="savings"
+            min={0}
+            onChange={handleSavingsChange}
+            value={savings}
+            className="price-input"
+          />
+        </div>
         <button
           type="button"
           className="calculate-btn"
+          disabled={!price}
           onClick={() => {
             calculateExpenses();
           }}
@@ -55,15 +57,16 @@ function Savings({
             className="progress-bar"
             $total={total}
             $expenses={expenses}
-            $budget={budget}
+            $savings={savings}
+            $percent={percent}
           />
-          <span>
-            {expenses} / {budget}
-          </span>
+          <span>{savings}</span>
         </div>
       ) : (
-        <p>Enter a budget and a price.</p>
+        <p>Enter the price per package.</p>
       )}
+
+      <h3 className="savings">Savings: {expenses}</h3>
     </SavingsContainer>
   );
 }

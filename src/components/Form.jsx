@@ -7,12 +7,11 @@ function Form({ addEntry }) {
   const [timeStamp, setTimeStamp] = useState("");
   const [trigger, setTrigger] = useState("");
   const [alternative, setAlternative] = useState("");
-  const [outcome, setOutcome] = useState("");
   const [error, setError] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!trigger || !alternative || !outcome) {
+    if (!trigger || !alternative) {
       setError("Please fill in all fields.");
       return;
     } else {
@@ -25,15 +24,14 @@ function Form({ addEntry }) {
       timeStamp: timeStamp ? new Date(timeStamp).toISOString() : "",
       trigger,
       alternative,
-      outcome,
     };
+    
     addEntry(entry);
     setCigarettes("");
     setGoal("");
     setTimeStamp("");
     setTrigger("");
     setAlternative("");
-    setOutcome("");
     setError("");
   };
 
@@ -41,7 +39,7 @@ function Form({ addEntry }) {
     <FormContainer onSubmit={handleSubmit}>
       <fieldset>
         <div className="form-group">
-          <label htmlFor="cigarettes">Cigarettes/day:</label>
+          <label htmlFor="cigarettes">Smoked:</label>
           <input
             type="number"
             min={0}
@@ -85,6 +83,8 @@ function Form({ addEntry }) {
         <label htmlFor="trigger">Trigger:</label>
         <input
           type="text"
+          maxLength={10}
+          placeholder="max.length: 10"
           id="trigger"
           name="trigger"
           value={trigger}
@@ -105,6 +105,8 @@ function Form({ addEntry }) {
         <label htmlFor="alternative">Alternative:</label>
         <input
           type="text"
+          maxLength={10}
+          placeholder="max.length: 10"
           id="alternative"
           name="alternative"
           value={alternative}
@@ -121,25 +123,6 @@ function Form({ addEntry }) {
         />
         <small className="error-message">{error}</small>
       </div>
-      <div className="form-group">
-        <label htmlFor="outcome">Outcome:</label>
-        <textarea
-          id="outcome"
-          name="outcome"
-          value={outcome}
-          onChange={(e) => {
-            if (e.target.value.length < 0) {
-              setError("Alternative cannot be empty.");
-              return;
-            } else {
-              setError("");
-            }
-            setOutcome(e.target.value);
-          }}
-        />
-        <small className="error-message">{error}</small>
-      </div>
-
       <button type="submit">Submit</button>
     </FormContainer>
   );

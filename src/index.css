@@ -1,28 +1,29 @@
 :root {
+  /* Utils */
+  --black: hsl(0, 0%, 0%);
+  --white: hsl(0, 0%, 100%);
+
   /* Backgrounds */
   --color-bg: hsla(0, 0%, 80%, 0.673);
-  --color-bg-light: #f9f9f9;
-  --color-table-header-bg: #0fb4a4;
-  --color-alt-row: rgba(255, 191, 105, 0.2);
-  --color-bg-header: #F8E1CD;
-  --color-bg-footer:  #FEC3AC;
-  --color-table-red: rgba(253, 188, 180, 0.29);
-  --color-table-orange: hsla(39, 100%, 50%, 0.2);
-  --color-table-green: rgba(6, 221, 6, 0.2);
+  --color-bg-light: hsl(0, 0%, 98%);
+  --color-green-blue: hsl(174, 85%, 38%);
+  --color-bg-header: hsl(28, 75%, 89%);
+  --color-bg-footer: hsl(17, 98%, 84%);
 
-  /* Text */
-  --color-text-main: #222222;
-  --color-text-light: #ffffff;
+  /* Alpha colors */
+  --color-light-orange-alpha: hsla(39, 100%, 50%, 0.5);
+  --color-red-alpha: hsla(7, 91%, 69%, 0.5);
+  --color-green-alpha: hsla(120, 95%, 45%, 0.5);
 
   /* Buttons */
-  --color-button-delete: #FF4D4D;
-  --color-button-delete-hover: #D93B3B;
-  --color-button-accent: #FFBF69;
-  --color-button-accent-hover: #f2a94a;
+  --color-button-delete: hsl(0, 100%, 65%);
+  --color-button-delete-hover: hsl(0, 68%, 54%);
+  --color-button-accent: hsl(34, 100%, 71%);
+  --color-button-accent-hover: hsl(34, 87%, 62%);
 
   /* Borders & shadows */
-  --color-border: rgba(105, 105, 105, 0.5);
-  --color-shadow: rgba(0, 0, 0, 0.1);
+  --color-border: hsla(0, 1%, 53%, 0.5);
+  --color-shadow: hsla(0, 0%, 0%, 0.2);
 }
 
 *,
@@ -41,12 +42,12 @@ body {
   font-family: "Savate", Arial, sans-serif;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   min-height: 100vh;
   background-color: var(--color-bg);
 }
 
-  .empty-list-message {
-    text-align: center;
-    margin-bottom: 0.5em;
-  }
-
+.empty-list-message {
+  text-align: center;
+  margin-bottom: 0.5em;
+}

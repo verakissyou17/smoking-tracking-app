@@ -33,8 +33,8 @@ export const SavingsContainer = styled.section`
       font-family: "Savate", Arial, sans-serif;
       width: 6rem;
       padding: 0.25em;
-      background-color: var(--color-table-header-bg);
-      color: var(--color-text-main);
+      background-color: var(--color-green-blue);
+      color: var(--black);
       font-size: 1rem;
       font-weight: bold;
       border: none;
@@ -58,12 +58,15 @@ export const SavingsContainer = styled.section`
 
     & span {
       font-family: "Savate", Arial, sans-serif;
-      color: var(--color-text-main);
+      color: var(--black);
       font-size: 0.9rem;
       font-weight: bold;
       text-align: center;
-
     }
+  }
+
+  .savings {
+    margin-block: 0.5rem;
   }
 `;
 
@@ -77,21 +80,23 @@ export const ProgressBarElement = styled.div`
   overflow: hidden;
 
   &::after {
-    content: "${({ $budget, $expenses }) => `${ $budget ? ($expenses * 100) / $budget : ""}%`}";
+    content: "${({ $percent }) => `${$percent.toFixed(2)}%`}";
     text-align: right;
-    font-size: 0.8rem; 
+    font-size: 0.8rem;
     font-family: "Savate", Arial, sans-serif;
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
-    width: ${({ $budget, $expenses }) => `${($expenses * 100) / $budget}%`};
+    width: ${({ $percent }) => `${$percent}%`};
     max-width: 100%;
-    background-color: ${({ $expenses, $budget }) => {
-      if ($expenses <= $budget /2) return "var(--color-table-green)";
-      if ($expenses <= $budget) return "var(--color-table-orange)";
-         return "var(--color-table-red)";
+    background-color: ${(props) => {
+      const { $expenses, $savings} = props;
+      if ($expenses <= $savings) return "var(--color-green-alpha)";
+      if ($expenses <= $savings) return "var(--color-light-orange-alpha)";
+      return "var(--color-red-alpha)";
     }};
+
     border-radius: 1rem;
     transition: width 0.3s ease-in-out;
   }
