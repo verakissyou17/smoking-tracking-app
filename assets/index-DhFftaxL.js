@@ -65,11 +65,15 @@ Error generating stack: `+e.message+`
   flex-direction: column;
   align-items: center;
   width: 100%;
-  max-width: 60em;
+  max-width: 23em;
   padding: 1em;
   margin: 2em auto;
   background-color: var(--color-bg-light);
   box-shadow: 2px 2px 5px var(--color-shadow);
+
+  @media (min-width: 63em) {
+    max-width: 63em;
+  }
 
   fieldset {
     display: flex;
