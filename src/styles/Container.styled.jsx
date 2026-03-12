@@ -14,6 +14,7 @@ export const ContainerStyled = styled.section`
     display: flex;
     align-items: center;
     background-color: var(--color-green-blue);
+    padding: 1em;
   }
 
   .container-header span {
@@ -32,7 +33,7 @@ export const ContainerBody = styled.div`
     padding: 0.25rem;
     border-bottom: 1px solid var(--color-border);
     background-color: ${({ $color }) => $color};
-    color: var( --color-text-dark);
+    color: var(--color-text-dark);
   }
 
   .delete-btn {

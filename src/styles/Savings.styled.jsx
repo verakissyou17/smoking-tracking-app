@@ -91,7 +91,7 @@ export const ProgressBarElement = styled.div`
     width: ${({ $percent }) => `${$percent}%`};
     max-width: 100%;
     background-color: ${(props) => {
-      const { $expenses, $savings} = props;
+      const { $expenses, $savings } = props;
       if ($expenses <= $savings) return "var(--color-green-alpha)";
       if ($expenses <= $savings) return "var(--color-light-orange-alpha)";
       return "var(--color-red-alpha)";

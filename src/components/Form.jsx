@@ -57,7 +57,6 @@ function Form({ addEntry }) {
           <label htmlFor="goal">Goal:</label>
           <input
             type="number"
-            min={0}
             id="goal"
             name="goal"
             value={goal}

@@ -66,7 +66,7 @@ function Savings({
         <p>Enter the price per package.</p>
       )}
 
-      <h3 className="savings">Savings: {expenses}</h3>
+      <h3 className="savings">Expenses: {expenses}</h3>
     </SavingsContainer>
   );
 }

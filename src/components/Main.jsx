@@ -23,14 +23,8 @@ function Main() {
       (acc, curr) => acc + curr.cigarettes,
       0,
     );
-    const totalGoals = entry.reduce((acc, curr) => acc + curr.goal, 0);
-   if(totalGoals > totalCigarettes) {
-    setTotal(totalGoals - totalCigarettes);
-   } else if(totalGoals < totalCigarettes) {
-    setTotal(totalCigarettes -totalGoals);
-   } else {
-    setTotal(0);
-   }
+
+    setTotal(totalCigarettes);
   }
 
   const addEntry = (entry) => {
